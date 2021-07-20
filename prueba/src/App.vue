@@ -3,7 +3,8 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/>
     <Card/> -->
-    <Container/>
+    <router-view></router-view>
+     <Container/>
   </div>
 </template>
 

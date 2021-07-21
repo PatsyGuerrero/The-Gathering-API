@@ -1,13 +1,23 @@
 <template >
-    <div class="containerClass">
-        <Card v-for="(dato,key) in data" 
-        :key="key" 
-        :name="dato.name" 
-        :id="dato.id"
-        :img="dato.imageUrl"
-        :types="dato.types"
-        :artist="dato.artist"
-        :flavor="dato.flavor"/>
+    <div class="container" id="people">
+        <div class="filter">
+            <label><input type="radio" v-model="selectedCategory" value="All" /> All</label>
+            <label><input type="radio" v-model="selectedCategory" value="Artifact" /> Artifact</label>
+            <label><input type="radio" v-model="selectedCategory" value="Creature" /> Creature</label>
+            <label><input type="radio" v-model="selectedCategory" value="Instant" /> Instant</label>
+        </div>
+        
+
+        <div class="containerClass">
+            <Card v-for="(dato,key) in filteredPeople" 
+            :key="key" 
+            :name="dato.name" 
+            :id="dato.id"
+            :img="dato.imageUrl"
+            :types="dato.types"
+            :artist="dato.artist"
+            :flavor="dato.flavor"/>
+        </div>
     </div>
 </template>
 <script>
@@ -22,7 +32,8 @@ export default {
   },
   data(){
       return {
-          data:null
+          data:null,
+          selectedCategory: "All"
       }
   },
   mounted() {
@@ -40,6 +51,22 @@ export default {
       })
       }
   },
+  computed: {
+		filteredPeople: function() {
+			var vm = this;
+			var category = vm.selectedCategory;
+			
+			if(category === "All") {
+                console.log(vm?.data);
+				return vm.data;
+			} else {
+                // console.log(data);
+            return vm?.data.filter(function(dato) {
+					return dato.types[0] === category;
+				});
+			}
+		}
+	}
 //   created(){
 //       axios.get('https://api.magicthegathering.io/v1/cards')
 //       .then(response => {

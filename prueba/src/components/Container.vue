@@ -23,7 +23,7 @@
 <script>
 import axios from 'axios';
 import Card from './Card.vue'
-
+// https://codepen.io/blakewatson/pen/xEXApK
 export default {
 //   components: { Card },
     name: 'Container',
@@ -33,7 +33,7 @@ export default {
   data(){
       return {
           data:null,
-          selectedCategory: "All"
+          selectedCategory: "All",
       }
   },
   mounted() {

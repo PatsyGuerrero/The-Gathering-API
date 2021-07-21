@@ -34,6 +34,13 @@ export default {
       return {
           data:null,
           selectedCategory: "All",
+          loading: false,
+          upto: 6,
+          pages: [],
+          pageArea: "",
+          isMobile: false,
+       
+      
       }
   },
   mounted() {

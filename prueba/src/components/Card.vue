@@ -1,6 +1,6 @@
 <template>
      <div class="cards">
-         <h1>{{name}}</h1>
+          <router-link :to="{ name: 'details', params: { id: id}}"><h1>{{name}}</h1></router-link>
          <img alt="Game" :src="img" >
          <!-- <span>{{types[0]}}</span>
          <p>{{flavor}}</p> -->

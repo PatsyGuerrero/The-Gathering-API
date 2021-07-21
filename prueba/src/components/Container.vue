@@ -29,10 +29,10 @@ export default {
       this.getTodos();
   },
   methods: {
-      getTodos(){
-           axios.get('https://api.magicthegathering.io/v1/cards')
+      async getTodos(){
+           await axios.get('https://api.magicthegathering.io/v1/cards')
       .then(response => {
-          console.log(response.data),
+        //   console.log(response.data),
           this.data=response.data.cards
       })
       .catch(error => {

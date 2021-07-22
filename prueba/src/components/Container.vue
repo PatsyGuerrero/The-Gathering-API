@@ -60,7 +60,6 @@ export default {
 
   mounted() {
       this.getTodos();
-      this.totalPage();
   },
 
   methods: {

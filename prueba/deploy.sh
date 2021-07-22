@@ -1,20 +1,20 @@
-#!/usr/bin/env sh
+# #!/usr/bin/env sh
 
-set -e
+# set -e
 
-npm run build
+# npm run build
 
-cd dist
+# cd dist
 
-git init
+# git init
 
-git add -A
+# git add -A
 
-git commit -m 'New Deployment'
+# git commit -m 'New Deployment'
 
-git push -f git@github.com:PatsyGuerrero/The-Gathering-API.git master:gh-pages
+# git push -f git@github.com:PatsyGuerrero/The-Gathering-API.git master:gh-pages
 
-cd -
+# cd -
 
 
 

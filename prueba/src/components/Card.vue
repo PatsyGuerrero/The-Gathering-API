@@ -1,6 +1,6 @@
 <template>
      <div class="cards">
-          <router-link :to="{ name: 'details', params: { id: id}}"><h1>{{name}}</h1></router-link>
+          <router-link :to="{ name: 'details', params: { id: id}}" class="router_active"><h1>{{name}}</h1></router-link>
          <img alt="Game" :src="img" >
          <!-- <span>{{types[0]}}</span>
          <p>{{flavor}}</p> -->
@@ -37,7 +37,11 @@ export default {
     
 }
 </script>
-<style >
+<style lang="css" >
+
+:root{
+   --grayishBlue: hsl(300, 31%, 11%);
+}
     .cards{
         display: flex; 
         /* justify-content: center; */
@@ -45,10 +49,10 @@ export default {
         align-items: center;
         flex-direction: column;
         width:20vw;
-        height: 51vh;
-        background-color: bisque;
-        border: 1px solid;
+        height: 55vh;
+        background-color: none;
         border-radius: 10%;
+        box-shadow: 0px 30px 40px -20px var(--grayishBlue);
     }
 
     .cards > img {
@@ -57,5 +61,11 @@ export default {
 
     .cards > h1 {
         font-size: 1.2rem;
+    }
+
+    .router_active {
+        text-decoration: none;
+        font-size: 0.5rem;
+        color: rgb(241, 238, 238);
     }
 </style>

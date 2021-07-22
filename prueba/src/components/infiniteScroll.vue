@@ -20,9 +20,11 @@
 import ButtonFan from "@/components/Button";
 export default {
   name: "InfiniteScroll",
+
   components: {
     ButtonFan,
   },
+
   props: {
     showLoading: {
       type: Boolean,
@@ -33,14 +35,16 @@ export default {
       default: "Loading ...",
     },
   },
+
   data() {
     return {
       isMobile: false,
     };
   },
+
   mounted() {
     const listElm = document.querySelector("#infinite-list");
-    listElm.addEventListener("scroll", (e) => {
+    listElm.addEventListener("scroll", () => {
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent
@@ -56,6 +60,7 @@ export default {
       }
     });
   },
+
   methods: {
     loadMore() {
       this.$emit("loadMore");

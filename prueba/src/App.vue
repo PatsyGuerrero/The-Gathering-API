@@ -1,14 +1,17 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/" exact>Home</router-link> |
-      <router-link to="/about" exact>About</router-link>
+      <router-link to="/" exact class="route">Home</router-link> |
+      <!-- <router-link to="/about" exact>About</router-link> -->
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+body{
+  background-image: url("./assets/2288806.jpg");
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,9 +27,15 @@
     font-weight: bold;
     color: #2c3e50;
 
+    
+
     &.router-link-exact-active {
       color: #42b983;
     }
   }
 }
+
+.route{
+      color: white;
+    }
 </style>
